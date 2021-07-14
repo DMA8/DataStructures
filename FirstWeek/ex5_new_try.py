@@ -1,6 +1,5 @@
-a = input()
-num_list = [int(i) for i in input().split()]
-w_size = int(input())
+num_list = [10, 2, 3, 4, 5, 6, 7, 82, 9, 10, 11, 12, 13, 14, 15, 16]
+w_size = 1
 i_stack = []
 o_stack = []
 ind_mul = 1
@@ -68,3 +67,7 @@ while ind < len(num_list):
         add_inp_pop_out(i_stack, o_stack)
         if len(i_stack) + len(o_stack) == w_size:
             print(get_max(i_stack, o_stack), end=' ')
+
+
+
+
