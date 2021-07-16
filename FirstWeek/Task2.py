@@ -1,16 +1,17 @@
-inp = "9 7 5 5 2 9 9 9 2 -1".split()
-
-len_inp = len(inp)
-leaves = []
-for i in range(len_inp):
-    if str(i) not in inp:
-        leaves.append(i)
+len_inp = int(input())
+inp = input().split()
+cash = {int(i) : -1 for i in inp}
 max_depth = 0
-for i in leaves:
-    a = i
-    c = 0
-    while a != '-1':
-        a = inp[int(a)]
-        c += 1
-    if c > max_depth: max_depth = c
+for i in range(len_inp):
+    j = i
+    counter = 1
+    while inp[int(j)] != '-1':
+        if cash[int(inp[int(j)])] > -1:
+          #  print('here')
+            counter += cash[int(inp[int(j)])]
+            break
+        counter += 1
+        j = inp[int(j)]
+    if max_depth < counter : max_depth = counter
+    cash[i] = counter
 print(max_depth)
